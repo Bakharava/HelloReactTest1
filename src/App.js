@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import ErrorComponent from "./components/ErrorComponent/ErrorComponent";
+import {Header} from "./components/Header";
+import {CounterComponent} from "./components/CounterComponent";
+import {UseEffectExample} from "./components/UseEffectExample";
+import {UseMemoExample} from "./components/UseMemoExample";
+import {UseCallbackExample} from "./components/UseCallbackExample";
+import UseLayotEffectExample from "./components/UseLayotEffectExample/UseLayotEffectExample";
+import UseCustomHookExample from "./components/UseCustomHookExample/UseCustomHookExample";
+import {UseRefExample} from "./components/UseRefExample";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+render () {
+    return (
+        <div className="App">
+            <ErrorComponent>
+               <Header />
+                {/*<CounterComponent />*/}
+                {/*<UseEffectExample />*/}
+                {<UseCallbackExample />}
+                {/*<UseLayotEffectExample />*/}
+                {/*<UseCustomHookExample />*/}
+                {/*<UseRefExample />*/}
+                {/*<UseMemoExample />*/}
+            </ErrorComponent>
+        </div>
+    );
+}
+
 }
 
 export default App;
