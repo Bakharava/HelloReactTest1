@@ -1,0 +1,16 @@
+$myColor: red;
+nav {
+  font-weight: bold;
+  ul {
+    font-weight: 400;
+    color: $myColor
+  }
+
+  a {
+    color: blue;
+  }
+
+  li {
+    color: $myColor
+  }
+}
