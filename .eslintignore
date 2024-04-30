@@ -1,0 +1,11 @@
+.github
+.husky
+.next
+.swc
+.vscode
+cert
+coverage
+node_modules
+out
+package-lock.json
+public
