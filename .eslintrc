@@ -217,7 +217,7 @@
     "rest-spread-spacing": [2, "never"],
     "semi-spacing": [1, { "before": false, "after": true }],
     "semi": "off",
-    "sort-keys": ["error", "asc", { "natural": true }],
+//    "sort-keys": ["error", "asc", { "natural": true }],
     "sort-vars": 0,
     "space-before-blocks": [1, "always"],
     "space-before-function-paren": [0, "always"],
