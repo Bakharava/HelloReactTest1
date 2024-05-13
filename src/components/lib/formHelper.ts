@@ -1,5 +1,7 @@
-export const validate = (values) => {
-  const errors = {};
+import {ValidationErrorType} from "../../types/formTypes";
+
+export const validate = (values: {[key: string]: string}) => {
+  let errors: ValidationErrorType = {};
 
   if (!values.firstName) {
     errors.firstName = 'Required';

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import logo from '../../assets/images/logo.svg';
+import {useEffect} from "react";
 
 const HeaderWrapper = styled.div`
   background-color: #16181d;
@@ -14,6 +15,11 @@ const Logo = styled.img`
   width: 40px;
 `;
 const Header = () => {
+
+    const getId = () => {
+
+    }
+
   return (
     <HeaderWrapper>
       <div style={{ margin: '0 auto', width: '80%' }}>

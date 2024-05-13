@@ -1,28 +1,30 @@
-import { useRef, useState } from 'react';
+import React, {ChangeEvent, MouseEvent, TouchEvent,  useRef, useState} from 'react';
 import { address } from '../../__mocks__/address';
+import {FormExampleProps} from "../../types/formTypes";
 
-const FormExample = () => {
-  const [name, setName] = useState('');
-  const [comment, setComment] = useState('Hello');
-  const [selectedAddress, setSelectedAddress] = useState(address[2]);
+const FormExample = ({name,
+                       comment,
+                       selectedAddress,
+                       setName, setComment,
+                       setSelectedAddress}: FormExampleProps) => {
   const [fullName, setFullName] = useState('');
-  const secondNameRef = useRef(null);
+  const secondNameRef = useRef<HTMLInputElement>(null);
 
-  const handleChangeName = (e) => {
+  const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
 
-  const handleChangeComment = (e) => {
+  const handleChangeComment = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setComment(e.target.value);
   };
 
-  const handleChooseAddress = (e) => {
+  const handleChooseAddress = (e: ChangeEvent<HTMLSelectElement>) => {
     setSelectedAddress(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: TouchEvent<HTMLButtonElement> | MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setFullName(name + ' ' + secondNameRef.current.value);
+    setFullName(name + ' ' + secondNameRef?.current?.value);
   };
 
   return (
