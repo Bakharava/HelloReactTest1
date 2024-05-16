@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import logo from '../../assets/images/logo.svg';
-import {useEffect} from "react";
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setNews } from '../../actions/news';
 
 const HeaderWrapper = styled.div`
   background-color: #16181d;
@@ -15,10 +17,19 @@ const Logo = styled.img`
   width: 40px;
 `;
 const Header = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    getNews();
+  }, []);
+  const getNews = async () => {
+    const newsUrl = `https://newsapi.org/v2/top-headlines/sources?pageSize=${10}&apiKey=${process.env.REACT_APP_API_KEY}`;
 
-    const getId = () => {
+    const response = await fetch(newsUrl);
+    const data = await response.json();
+    data.sources.length = 10;
 
-    }
+    dispatch(setNews(data.sources));
+  };
 
   return (
     <HeaderWrapper>
