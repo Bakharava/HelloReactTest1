@@ -6,6 +6,7 @@ import { FormikLibExample } from './components/FormikLibExample';
 import { address } from './__mocks__/address';
 import { NewsSection } from './components/NewsSection';
 import { User } from './components/User';
+import { TodosSection } from './components/TodosSection';
 
 const App = () => {
   const [name, setName] = useState<string>('');
@@ -27,6 +28,7 @@ const App = () => {
       <FormikLibExample />
       <NewsSection />
       <User />
+      <TodosSection />
     </div>
   );
 };
