@@ -4,13 +4,21 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchNews } from '../../store/actions/asyncActions';
 import { AppDispatch } from '../../rootReducer';
+import { NavLink } from 'react-router-dom';
 
 const HeaderWrapper = styled.div`
   background-color: #16181d;
   display: flex;
   align-items: center;
   height: 72px;
-  width: 100%;
+  padding: 0 100px;
+
+  a {
+    color: gray;
+  }
+  .active {
+    color: white;
+  }
 `;
 
 const Logo = styled.img`
@@ -31,6 +39,13 @@ const Header = () => {
           Daily Hot News
         </div>
       </div>
+      <NavLink style={{ marginRight: 16 }} to="/">
+        Home
+      </NavLink>
+      <NavLink style={{ marginRight: 16 }} to="/news">
+        News
+      </NavLink>
+      <NavLink to="/todos">Todos</NavLink>
     </HeaderWrapper>
   );
 };

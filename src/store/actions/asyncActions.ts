@@ -17,9 +17,9 @@ export const fetchNews = () => {
   };
 };
 
-export const fetchTodos = () => {
+export const fetchTodos = (todoId = 1) => {
   return (dispatch: any) => {
-    const todosUrl = 'https://jsonplaceholder.typicode.com/users/1/todos';
+    const todosUrl = `https://jsonplaceholder.typicode.com/users/${todoId}/todos`;
     dispatch(todoSlice.actions.todosFetching());
 
     fetch(todosUrl)

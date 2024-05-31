@@ -1,3 +1,1 @@
-import NewsSection from './NewsSection';
-
-export { NewsSection };
+export { default as NewsSection } from './NewsSection';

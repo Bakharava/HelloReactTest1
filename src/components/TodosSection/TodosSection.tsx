@@ -24,7 +24,7 @@ const Loader = styled.span`
     }
   }
 `;
-const TodosSection = () => {
+const TodosSection = ({ todoId }: { todoId?: any }) => {
   console.log(useSelector((state: any) => state));
   const todos = useSelector((state: any) => state.todos).todos;
   const isLoading = useSelector((state: any) => state.todos).isNewsFetching;
@@ -32,7 +32,7 @@ const TodosSection = () => {
 
   const dispatch = useDispatch() as AppDispatch;
   useEffect(() => {
-    dispatch(fetchTodos());
+    dispatch(fetchTodos(todoId));
   }, []);
 
   return (
