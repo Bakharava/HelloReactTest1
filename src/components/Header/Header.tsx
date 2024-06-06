@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { fetchNews } from '../../store/actions/asyncActions';
 import { AppDispatch } from '../../rootReducer';
 import { NavLink } from 'react-router-dom';
+import LanguageDropdown from '../LanguageDropdown/LanguageDropdown';
 
 const HeaderWrapper = styled.div`
   background-color: #16181d;
@@ -46,6 +47,7 @@ const Header = () => {
         News
       </NavLink>
       <NavLink to="/todos">Todos</NavLink>
+      <LanguageDropdown />
     </HeaderWrapper>
   );
 };

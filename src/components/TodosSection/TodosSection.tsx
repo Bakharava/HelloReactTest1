@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 import { AppDispatch } from '../../rootReducer';
 import { fetchTodos } from '../../store/actions/asyncActions';
+import { TitleContext } from '../Layout/Layout';
 
 const Loader = styled.span`
   width: 48px;
@@ -38,6 +39,13 @@ const TodosSection = ({ todoId }: { todoId?: any }) => {
   return (
     <div>
       <h1>Todos section</h1>
+      <TitleContext.Consumer>
+        {({ title, description }) => (
+          <div>
+            {title} + {description}
+          </div>
+        )}
+      </TitleContext.Consumer>
       {isLoading && !isFetchError && <Loader className="loader" />}
       {todos.length > 0 ? (
         todos.map((item: any) => {
