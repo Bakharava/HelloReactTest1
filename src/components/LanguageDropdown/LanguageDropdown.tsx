@@ -1,11 +1,11 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const LanguageDropdown = () => {
   const languages = ['English', 'Spanish', 'French'];
   const { setLanguage } = useContext(AppContext);
 
-  const selectLang = (e) => {
+  const selectLang = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setLanguage(e.target.value);
   };
 

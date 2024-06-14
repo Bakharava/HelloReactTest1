@@ -34,18 +34,21 @@ const NewsSection = () => {
   };
 
   return (
-    <div>
-      {isNewsLoading && <Loader />}
-      {news.length > 0 ? (
-        news.map((item: any) => {
-          return <div key={item.name}>{item.name}</div>;
-        })
-      ) : (
-        <div></div>
-      )}
-      {news.length > 0 && <button onClick={handleClearNews}>Clear News</button>}
-      {error && <div>{error}</div>}
-    </div>
+    <>
+      <div>News Section</div>
+      <div>
+        {isNewsLoading && <Loader />}
+        {news.length > 0 ? (
+          news.map((item: any) => {
+            return <div key={item.name}>{item.name}</div>;
+          })
+        ) : (
+          <div></div>
+        )}
+        {news.length > 0 && <button onClick={handleClearNews}>Clear News</button>}
+        {error && <div>{error}</div>}
+      </div>{' '}
+    </>
   );
 };
 
